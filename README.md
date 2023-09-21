@@ -20,4 +20,4 @@ Configuração Padrão:
 
 O valor `('banco_0', '00', 'banco_1', '10', 50)` significa "transferência do banco_0, conta 00, para o banco_1, conta 10, no valor de 50.
   
-A numeração de contas segue o padrão {numero_do_banco}{numero_da_conta} com índice começando no zero. Ou seja, com 3 bancos e 4 clientes, a "ultima" conta é a 23 (banco 2, conta 3) 
+A numeração de contas segue o padrão {numero_do_banco}{numero_da_conta} com índice começando no zero. Ou seja, com 3 bancos e 4 clientes, a "ultima" conta é a '23' (banco 2, conta 3) 
