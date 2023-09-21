@@ -22,4 +22,4 @@ O valor `('banco_0', '00', 'banco_1', '10', 50)` significa "transferência do ba
   
 A numeração de contas segue o padrão {numero_do_banco}{numero_da_conta} com índice começando no zero. Ou seja, com 3 bancos e 4 clientes, a "ultima" conta é a '23' (banco 2, conta 3) 
 
-Em uma configuração com 10 bancos e 5 clientes, uma tranferência válida seria `('banco_9', '94', 'banco_5', '50', 100)`, que significa "transferência do banco_9, conta '94', para o banco_4, conta '50', no valor de 100
+Em uma configuração com 10 bancos e 5 clientes, uma tranferência válida seria `('banco_9', '94', 'banco_5', '50', 100)`, que significa "transferência do banco_9, conta '94', para o banco_5, conta '50', no valor de 100
