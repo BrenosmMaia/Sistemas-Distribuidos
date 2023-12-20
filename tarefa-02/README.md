@@ -1,7 +1,7 @@
 ## Como usar o sistema?
 
-1. Escolha a quantidade de clientes no arquivo `banco.py`, linha 80
-2. Escolha a quantidade de bancos no arquivo `banco.py`, linha 81
+1. Escolha a quantidade de clientes no arquivo `banco.py`, linha 84
+2. Escolha a quantidade de bancos no arquivo `banco.py`, linha 85
 3. Preencha a lista de trânsferências, no arquivo `simulacao.py` mantendo o padrão das tuplas
 4. Execute o arquivo `banco.py`
 5. Execute o arquivo `simulacao.py`, em outro terminal
