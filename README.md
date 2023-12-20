@@ -1,6 +1,6 @@
 # Sistemas-Distribuidos
 
-## Como usar o sistmema?
+## Como usar o sistema?
 
 1. Clone o repositório
 2. Entre na pasta tarefa-01
