@@ -2,7 +2,7 @@ from cliente import Cliente
 from xmlrpc.server import SimpleXMLRPCServer
 import threading
 from xmlrpc.client import ServerProxy
-import queue
+import re
 
 class Banco:
     def __init__(self, nome: str):
@@ -42,7 +42,8 @@ class Banco:
             if banco_origem == banco_destino:
                 self.depositar(conta_destino, valor)
             else:
-                port = int(banco_destino[-1]) + 8080
+                match = re.search(r'\d{1,4}$', banco_destino)
+                port =  int(match.group()) + 8000
                 other_bank = ServerProxy(f"http://localhost:{port}")
                 other_bank.depositar(conta_destino, valor)
         return [i.contas for i in lista_bancos]
@@ -55,7 +56,7 @@ def cria_bancos_e_contas(n_bancos: int, n_clientes:int):
         for j in range(n_clientes):
             cliente = Cliente("c"+str(j)+"_"+lista_bancos[i].nome)
             lista_clientes.append(cliente.nome)
-            lista_bancos[i].criar_conta(cliente.nome, str(str(i)+str(j)), 100)
+            lista_bancos[i].criar_conta(cliente.nome, str(str(i).zfill(3)+str(j).zfill(3)), 100)
     print("Situação Inicial das Contas:")
     for i in lista_bancos:
         print(i.contas)
@@ -73,15 +74,15 @@ def roda_servidor(banco, port):
 def cria_servidor(n_bancos):
     servers = []
     for i in range(n_bancos):
-        port = 8080 + i
+        port = 8000 + i
         server = threading.Thread(target=roda_servidor, args=(lista_bancos[i], port))
         servers.append(server)
         server.start()
     for server in servers:
         server.join()
 
-n_clientes = 4
-n_bancos = 3
+n_clientes = 6
+n_bancos = 6
 lista_bancos = []
 lista_clientes = []
 
